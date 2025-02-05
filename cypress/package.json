@@ -18,7 +18,7 @@
     "cypress-log-to-output": "^1.1.2",
     "cypress-multi-reporters": "^1.5.0",
     "cypress-plugin-tab": "^1.0.5",
-    "danger": "^10.7.1",
+    "danger": "^12.3.3",
     "franc-min": "~6.2.0",
     "glob": "~7.2.0",
     "jimp": "~0.22.0",

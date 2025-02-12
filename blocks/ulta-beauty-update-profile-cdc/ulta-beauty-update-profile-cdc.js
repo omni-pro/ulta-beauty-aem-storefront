@@ -39,7 +39,7 @@ function initializeGigya(container) {
             console.log('gigya.accounts', gigya.accounts);
           } else {
             gigya.accounts.showScreenSet({
-              screenSet: 'Default-RegistrationLogin',
+              screenSet: 'Default-ProfileUpdate',
               containerID: container.id, // Asegúrate de usar el containerID correcto
             });
             console.log('gigya.accounts', gigya.accounts);

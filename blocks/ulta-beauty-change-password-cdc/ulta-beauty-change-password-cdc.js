@@ -1,24 +1,14 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/no-extraneous-dependencies */
-import { SignUp } from '@dropins/storefront-auth/containers/SignUp.js';
-import { render as authRenderer } from '@dropins/storefront-auth/render.js';
-import { checkIsAuthenticated } from '../../scripts/configs.js';
-import { CUSTOMER_ACCOUNT_PATH, CUSTOMER_LOGIN_PATH } from '../../scripts/constants.js';
-
-// Initialize
-import '../../scripts/initializers/auth.js';
-
 function getAccountInfoResponse(response) {
   if (response.errorCode == 0) {
-    var profile = response['profile'];
-    var msg = profile['firstName'] + ' is ' + profile['age'] + ' years old';
+    const profile = response.profile;
+    const msg = `${profile.firstName} is ${profile.age} years old`;
     alert(msg);
   } else {
-    alert('Error :' + response.errorMessage);
+    alert(`Error: ${response.errorMessage}`);
   }
 }
 
-function initializeGigya() {
+function initializeGigya(container) {
   window.__gigyaConf = {
     onGigyaServiceReady: function () {
       gigya.accounts.addEventHandlers({
@@ -32,21 +22,31 @@ function initializeGigya() {
           // User is logged out
           console.log('User is logged out');
           console.log(r);
-          gigya.accounts.showScreenSet({ screenSet: 'Default-RegistrationLogin' });
-        }
+          gigya.accounts.showScreenSet({
+            screenSet: 'Default-LiteRegistration',
+            containerID: container.id, // Asegúrate de usar el containerID correcto
+          });
+        },
       });
+
       gigya.accounts.session.verify({
         callback: function (response) {
           if (response.errorCode == 0) {
-            gigya.accounts.showScreenSet({ screenSet: 'Default-ProfileUpdate' });
+            gigya.accounts.showScreenSet({
+              screenSet: 'Default-ProfileUpdate',
+              containerID: container.id, // Asegúrate de usar el containerID correcto
+            });
             console.log('gigya.accounts', gigya.accounts);
           } else {
-            gigya.accounts.showScreenSet({ screenSet: 'Default-RegistrationLogin' });
+            gigya.accounts.showScreenSet({
+              screenSet: 'Default-ProfileUpdate',
+              containerID: container.id, // Asegúrate de usar el containerID correcto
+            });
             console.log('gigya.accounts', gigya.accounts);
           }
-        }
+        },
       });
-    }
+    },
   };
 
   // Load Gigya script dynamically
@@ -56,6 +56,12 @@ function initializeGigya() {
 }
 
 export default async function decorate(block) {
-  // Initialize Gigya
-  initializeGigya();
+  console.log('block', block);
+  block.innerHTML = '';
+
+  // Crea un nuevo div con el ID deseado
+  const container = document.createElement('div');
+  container.id = 'ulta-beauty-change-password-cdc-container';
+  block.appendChild(container);
+  initializeGigya(container);
 }

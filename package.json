@@ -8,6 +8,7 @@
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "start": "aem up --print-index",
+    "tailwind:build": "npx @tailwindcss/cli -i ./styles/source.css -o ./styles/global.css --watch",
     "install:dropins": "node build.mjs && node postinstall.js",
     "postinstall": "npm run install:dropins",
     "postupdate": "npm run install:dropins"
@@ -41,6 +42,8 @@
     "@dropins/storefront-checkout": "~1.0.0",
     "@dropins/storefront-order": "~1.0.2",
     "@dropins/storefront-pdp": "~1.0.0",
-    "@dropins/tools": "^0.40.0"
+    "@dropins/tools": "^0.40.0",
+    "@tailwindcss/cli": "^4.0.14",
+    "tailwindcss": "^4.0.14"
   }
 }

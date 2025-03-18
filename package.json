@@ -8,9 +8,10 @@
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
     "lint": "npm run lint:js && npm run lint:css",
     "start": "aem up --print-index",
-    "tailwind:build": "npx @tailwindcss/cli -i ./styles/source.css -o ./styles/global.css --watch",
+    "tailwind:dev": "npx @tailwindcss/cli -i ./styles/source.css -o ./styles/global.css --watch",
+    "tailwind:build": "npx @tailwindcss/cli -i ./styles/source.css -o ./styles/global.css",
     "install:dropins": "node build.mjs && node postinstall.js",
-    "postinstall": "npm run install:dropins",
+    "postinstall": "npm run install:dropins && npm run tailwind:build",
     "postupdate": "npm run install:dropins"
   },
   "repository": {

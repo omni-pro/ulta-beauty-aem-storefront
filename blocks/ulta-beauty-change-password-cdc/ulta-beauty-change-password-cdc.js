@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq, no-alert, no-underscore-dangle, func-names, object-shorthand, no-console, no-undef, no-unused-vars, operator-linebreak, eol-last */
-
+/* eslint-disable-next-line max-len */
 /* global gigya */
 
 function getAccountInfoResponse(response) {

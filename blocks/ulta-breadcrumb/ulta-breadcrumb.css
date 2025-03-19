@@ -1,0 +1,33 @@
+.ulta-breadcrumb {
+    align-items: center;
+    color: var(--gray-600);
+    display: flex;
+    font-size: 12px;
+    letter-spacing: 0.36px;
+    line-height: 16px;
+  }
+  
+  .ulta-breadcrumb nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .ulta-breadcrumb a {
+    text-decoration: none;
+    color: var(--gray-600);
+  }
+  
+  .ulta-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  .breadcrumb-separator {
+    color: var(--gray-600);
+    font-size: 14px;
+  }
+  
+  .ulta-breadcrumb span:last-child {
+    color: var(--black);
+  }
+  

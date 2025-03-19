@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { Icon, provider as uiProvider } from '@dropins/tools/components.js';
 import { render as accountRenderer } from '@dropins/storefront-account/render.js';
 import { loadFragment } from '../fragment/fragment.js';

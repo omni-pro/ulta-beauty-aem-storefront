@@ -58,6 +58,7 @@ npm run lint
 1. Add your Adobe Commerce SaaS configuration in the `configs.xlsx` sheet in your content repository.
 1. Install all dependencies using `npm i`.
 1. Start AEM Proxy: `npm run up` (opens your browser at `http://localhost:3000`)
+1. In a second console, execute command to watch for tailwind changes: `npm run tailwind:build`
 1. Open the `{repo}` directory in your favourite IDE and start coding :)
 
 ## Changelog

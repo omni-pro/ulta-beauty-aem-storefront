@@ -51,7 +51,27 @@
         "cards",
         "columns",
         "fragment",
-        "commerce-mini-cart"
+        "commerce-mini-cart",
+        "ulta-separator",
+        "ulta-promotions-headband",
+        "ulta-main-banner",
+        "ulta-category-purchase",
+        "ulta-promotions-carousel",
+        "ulta-banner-daily-offers",
+        "ulta-beauty-trends",
+        "ulta-corporate-commitments",
+        "ulta-cookies",
+        "ulta-discount-headband",
+        "ulta-title",
+        "ulta-category-blogs",
+        "ulta-breadcrumb",
+        "ulta-404",
+        "ulta-banner-shopping-cart",
+        "ulta-review-form",
+        "ulta-review-list",
+        "ulta-block-text",
+        "ulta-brands",
+        "ulta-article-list"
       ]
     }
   ]

@@ -1,0 +1,11 @@
+{
+  "mappings": [
+    "/content/ulta-store/:/",
+    "/content/ulta-store/headers:/.helix/headers.json",
+    "/content/ulta-store/configs:/configs.json",
+    "/content/ulta-store/configs-stage:/configs-stage.json",
+    "/content/ulta-store/configs-dev:/configs-dev.json",
+    "/content/ulta-store/placeholders:/placeholders.json"
+  ],
+  "includes": ["/content/ulta-store/"]
+}

@@ -1,9 +1,11 @@
-/* eslint-disable eqeqeq, no-alert, no-underscore-dangle, func-names, object-shorthand, no-console, no-undef, no-unused-vars, operator-linebreak, eol-last */
+/* eslint-disable eqeqeq, no-alert, no-underscore-dangle, func-names */
+/* eslint-disable object-shorthand, no-console, no-undef, no-unused-vars */
+/* eslint-disable operator-linebreak, quotes */
 /* eslint-disable-next-line max-len */
 /* global gigya */
 function getAccountInfoResponse(response) {
   if (response.errorCode == 0) {
-    const profile = response.profile;
+    const { profile } = response;
     const msg = `${profile.firstName} is ${profile.age} years old`;
     alert(msg);
   } else {

@@ -16,12 +16,12 @@ module.exports = {
     "linebreak-style": ["error", "unix"], // enforce unix linebreaks
     "no-param-reassign": [2, { props: false }], // allow modifying properties of param
     "no-use-before-define": [2, { functions: false }],
-    "no-console": [
+    /* "no-console": [
       "error",
       {
         allow: ["warn", "error", "info", "debug"],
       },
-    ],
+    ], */
     "no-unused-vars": [
       "error",
       { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
@@ -30,5 +30,7 @@ module.exports = {
     // Ignorar la regla 'import/named' en todo el proyecto
     "import/named": "off",
     "import/no-unresolved": "off",
+    "xwalk/max-cells": "off", // disable max-cells rule
+    "no-console": "off", // allow console.log
   },
 };

@@ -1,3 +1,7 @@
+/* eslint-disable eqeqeq, no-alert, no-underscore-dangle, func-names, object-shorthand, no-console, no-undef, no-unused-vars, operator-linebreak, eol-last */
+
+/* global gigya */
+
 function getAccountInfoResponse(response) {
   if (response.errorCode == 0) {
     const profile = response.profile;
@@ -24,7 +28,7 @@ function initializeGigya(container) {
           console.log(r);
           gigya.accounts.showScreenSet({
             screenSet: 'Default-LiteRegistration',
-            containerID: container.id, // Asegúrate de usar el containerID correcto
+            containerID: container.id,
           });
         },
       });
@@ -34,13 +38,13 @@ function initializeGigya(container) {
           if (response.errorCode == 0) {
             gigya.accounts.showScreenSet({
               screenSet: 'Default-ProfileUpdate',
-              containerID: container.id, // Asegúrate de usar el containerID correcto
+              containerID: container.id,
             });
             console.log('gigya.accounts', gigya.accounts);
           } else {
             gigya.accounts.showScreenSet({
-              screenSet: 'Default-ProfileUpdate',
-              containerID: container.id, // Asegúrate de usar el containerID correcto
+              screenSet: 'Default-RegistrationLogin',
+              containerID: container.id,
             });
             console.log('gigya.accounts', gigya.accounts);
           }

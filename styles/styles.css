@@ -14,6 +14,26 @@
 
 /* stylelint-disable no-empty-source */
 :root, .dropin-design {
+    /* Ultra colors */
+
+    /* Primary sunset */
+    --color-primary-sunset-50: #fff5eb;
+    --color-primary-sunset-100: #ffe7ce;
+    --color-primary-sunset-200: #ffc599;
+    --color-primary-sunset-300: #f8985a;
+    --color-primary-sunset-400: #f26b1c;
+    --color-primary-sunset-500: #e35200;
+    --color-primary-sunset-600: #ba4301;
+
+    /* Primary rosy */
+    --color-primary-rosy-50: #fdf1f3;
+    --color-primary-rosy-100: #fedfe6;
+    --color-primary-rosy-200: #ffccd8;
+    --color-primary-rosy-300: #f46b99;
+    --color-primary-rosy-400: #e90b5a;
+    --color-primary-rosy-500: #cc0058;
+    --color-primary-rosy-600: #850130;
+
     /* Adobe Commerce Dropin design tokens */
     --color-brand-300: #6d6d6d;
     --color-brand-500: #454545;

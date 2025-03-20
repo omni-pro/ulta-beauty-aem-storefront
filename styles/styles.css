@@ -582,8 +582,7 @@ body.columns main > .section:empty {
 body {
   display: none;
   margin: 0;
-  /*background-color: var(--background-color);*/
-  background-color: blue;
+  background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);

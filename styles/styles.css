@@ -34,6 +34,21 @@
     --color-primary-rosy-500: #cc0058;
     --color-primary-rosy-600: #850130;
 
+    /* Gray */
+    --color-white: #fff;
+    --color-gray-25: #fafafa;
+    --color-gray-50: #f6f6f6;
+    --color-gray-100: #f1f1f1;
+    --color-gray-200: #e6e6e6;
+    --color-gray-300: #d4d4d4;
+    --color-gray-400: #c0c0c0;
+    --color-gray-500: #8f8f8f;
+    --color-gray-600: #6e6e6e;
+    --color-gray-700: #505050;
+    --color-gray-800: #363636;
+    --color-gray-900: #232323;
+    --color-black: #000;
+
     /* Adobe Commerce Dropin design tokens */
     --color-brand-300: #6d6d6d;
     --color-brand-500: #454545;

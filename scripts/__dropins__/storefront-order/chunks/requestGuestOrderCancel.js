@@ -1,6 +1,6 @@
 /*! Copyright 2025 Adobe
 All Rights Reserved. */
-import{PRODUCT_DETAILS_FRAGMENT as d,PRICE_DETAILS_FRAGMENT as s,GIFT_CARD_DETAILS_FRAGMENT as i,ORDER_ITEM_DETAILS_FRAGMENT as A,BUNDLE_ORDER_ITEM_DETAILS_FRAGMENT as D,ORDER_SUMMARY_FRAGMENT as c,ADDRESS_FRAGMENT as u,GUEST_ORDER_FRAGMENT as G}from"../fragments.js";import{f as a,h as R}from"./fetch-graphql.js";import{a as T}from"./initialize.js";const N=`
+import{PRODUCT_DETAILS_FRAGMENT as s,PRICE_DETAILS_FRAGMENT as i,GIFT_CARD_DETAILS_FRAGMENT as A,ORDER_ITEM_DETAILS_FRAGMENT as d,BUNDLE_ORDER_ITEM_DETAILS_FRAGMENT as c,ORDER_SUMMARY_FRAGMENT as D,ADDRESS_FRAGMENT as G,ORDER_ITEM_FRAGMENT as u,GIFT_WRAPPING_FRAGMENT as M,GIFT_MESSAGE_FRAGMENT as N,GUEST_ORDER_FRAGMENT as O}from"../fragments.js";import{f as R,h as a}from"./fetch-graphql.js";import{a as T}from"./initialize.js";const m=`
   mutation CANCEL_ORDER_MUTATION($orderId: ID!, $reason: String!) {
     cancelOrder(input: { order_id: $orderId, reason: $reason }) {
       error
@@ -55,23 +55,7 @@ import{PRODUCT_DETAILS_FRAGMENT as d,PRICE_DETAILS_FRAGMENT as s,GIFT_CARD_DETAI
           ...ADDRESS_FRAGMENT
         }
         items {
-          ...ORDER_ITEM_DETAILS_FRAGMENT
-          ... on BundleOrderItem {
-            ...BUNDLE_ORDER_ITEM_DETAILS_FRAGMENT
-          }
-          ... on GiftCardOrderItem {
-            ...GIFT_CARD_DETAILS_FRAGMENT
-            product {
-              ...PRODUCT_DETAILS_FRAGMENT
-            }
-          }
-          ... on DownloadableOrderItem {
-            product_name
-            downloadable_links {
-              sort_order
-              title
-            }
-          }
+          ...ORDER_ITEM_FRAGMENT
         }
         total {
           ...ORDER_SUMMARY_FRAGMENT
@@ -79,14 +63,17 @@ import{PRODUCT_DETAILS_FRAGMENT as d,PRICE_DETAILS_FRAGMENT as s,GIFT_CARD_DETAI
       }
     }
   }
-  ${d}
   ${s}
   ${i}
   ${A}
-  ${D}
+  ${d}
   ${c}
+  ${D}
+  ${G}
   ${u}
-`,M=async(r,e,_,t)=>{if(!r)throw new Error("No order ID found");if(!e)throw new Error("No reason found");return a(N,{variables:{orderId:r,reason:e}}).then(({errors:o,data:n})=>{if(o)return R(o);if(n.cancelOrder.error!=null){t();return}const E=T(n.cancelOrder.order);_(E)}).catch(()=>t())},O=`
+  ${M}
+  ${N}
+`,p=async(r,e,n,t)=>{if(!r)throw new Error("No order ID found");if(!e)throw new Error("No reason found");return R(m,{variables:{orderId:r,reason:e}}).then(({errors:E,data:_})=>{if(E)return a(E);if(_.cancelOrder.error!=null){t();return}const o=T(_.cancelOrder.order);n(o)}).catch(()=>t())},I=`
   mutation REQUEST_GUEST_ORDER_CANCEL_MUTATION(
     $token: String!
     $reason: String!
@@ -98,5 +85,5 @@ import{PRODUCT_DETAILS_FRAGMENT as d,PRICE_DETAILS_FRAGMENT as s,GIFT_CARD_DETAI
       }
     }
   }
-  ${G}
-`,S=async(r,e,_,t)=>{if(!r)throw new Error("No order token found");if(!e)throw new Error("No reason found");return a(O,{variables:{token:r,reason:e}}).then(({errors:o,data:n})=>{if(o)return R(o);n.requestGuestOrderCancel.error!=null&&t();const E=T(n.requestGuestOrderCancel.order);_(E)}).catch(()=>t())};export{M as c,S as r};
+  ${O}
+`,f=async(r,e,n,t)=>{if(!r)throw new Error("No order token found");if(!e)throw new Error("No reason found");return R(I,{variables:{token:r,reason:e}}).then(({errors:E,data:_})=>{if(E)return a(E);_.requestGuestOrderCancel.error!=null&&t();const o=T(_.requestGuestOrderCancel.order);n(o)}).catch(()=>t())};export{p as c,f as r};

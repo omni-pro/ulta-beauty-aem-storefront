@@ -3,3 +3,6 @@ mountpoints:
     url: "https://author-p147931-e1511083.adobeaemcloud.com/bin/franklin.delivery/omni-pro/ulta-beauty-aem-storefront/main"
     type: "markup"
     suffix: ".html"
+
+folders:
+  /products/: /products/default

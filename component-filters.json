@@ -8,6 +8,14 @@
   {
     "id": "section",
     "components": [
+      "accordion",
+      "carousel",
+      "form",
+      "quote",
+      "search",
+      "table",
+      "tabs",
+      "video",
       "text",
       "image",
       "button",
@@ -79,12 +87,6 @@
       "ulta-beauty-register-cdc",
       "ulta-beauty-reset-password-cdc",
       "ulta-beauty-update-profile-cdc"
-    ]
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
     ]
   },
   {

@@ -9,9 +9,9 @@ import { rootLink } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
   const {
-    'start-shopping-url': startShoppingURL = '',
-    'cart-url': cartURL = '',
-    'checkout-url': checkoutURL = '',
+    'start-shopping-url': startShoppingURL = '/',
+    'cart-url': cartURL = '/cart',
+    'checkout-url': checkoutURL = '/checkout',
   } = readBlockConfig(block);
 
   block.innerHTML = '';

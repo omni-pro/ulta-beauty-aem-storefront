@@ -7,8 +7,9 @@ export default async function decorate(block) {
   await import("/scripts/widgets/search.js");
 
   //const { category, urlpath, type } = readBlockConfig(block);
-  const { category, urlpath } = readBlockConfig(block);
-  const type = 'search';
+  const type = '';
+  const category = '4';
+  const urlpath = 'gear';
   block.textContent = "";
 
   const storeDetails = {

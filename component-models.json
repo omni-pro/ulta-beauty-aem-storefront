@@ -768,6 +768,38 @@
     ]
   },
   {
+    "id": "ulta-products-carousel",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Block Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "description",
+        "label": "Block Description"
+      },
+      {
+        "component": "text",
+        "valueType": "array",
+        "name": "tag",
+        "label": "Enter tags",
+        "placeholder": "Enter tags separated by commas"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "button-text",
+        "label": "Button label",
+        "value": "",
+        "placeholder": "ex: Add to Cart"
+      }
+    ]
+  },
+  {
     "id": "ulta-promotions-carousel",
     "fields": [
       {

@@ -23,6 +23,7 @@ import {
 } from './aem.js';
 import { trackHistory } from './commerce.js';
 import initializeDropins from './initializers/index.js';
+import { removeHashTags } from './api/hashtags/parser.js';
 
 const AUDIENCES = {
   mobile: () => window.innerWidth < 600,
@@ -70,40 +71,6 @@ function buildHeroBlock(main) {
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);
   }
-}
-
-/**
- * Moves all the attributes from a given elmenet to another given element.
- * @param {Element} from the element to copy attributes from
- * @param {Element} to the element to copy attributes to
- */
-export function moveAttributes(from, to, attributes) {
-  if (!attributes) {
-    // eslint-disable-next-line no-param-reassign
-    attributes = [...from.attributes].map(({ nodeName }) => nodeName);
-  }
-  attributes.forEach((attr) => {
-    const value = from.getAttribute(attr);
-    if (value) {
-      to.setAttribute(attr, value);
-      from.removeAttribute(attr);
-    }
-  });
-}
-
-/**
- * Move instrumentation attributes from a given element to another given element.
- * @param {Element} from the element to copy attributes from
- * @param {Element} to the element to copy attributes to
- */
-export function moveInstrumentation(from, to) {
-  moveAttributes(
-    from,
-    to,
-    [...from.attributes]
-      .map(({ nodeName }) => nodeName)
-      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
-  );
 }
 
 /**
@@ -184,6 +151,22 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+}
+
+/**
+ * Decorates all links in scope of element
+ *
+ * @param {HTMLElement} element
+ */
+function decorateLinks(element) {
+  element.querySelectorAll('a').forEach((a) => {
+    if (!a.hash) {
+      return;
+    }
+    a.addEventListener('click', (evt) => {
+      removeHashTags(evt.target);
+    });
+  });
 }
 
 function preloadFile(href, as) {
@@ -339,6 +322,8 @@ async function loadLazy(doc) {
   }
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  decorateLinks(doc);
 }
 
 /**
@@ -388,6 +373,26 @@ export async function fetchIndex(indexFile, pageSize = 500) {
   window.index[indexFile] = newIndex;
 
   return newIndex;
+}
+
+/**
+ * Get root path
+ */
+export function getRootPath() {
+  window.ROOT_PATH = window.ROOT_PATH || getMetadata('root') || '/';
+  return window.ROOT_PATH;
+}
+
+/**
+ * Decorates links.
+ * @param {string} [link] url to be localized
+ */
+export function rootLink(link) {
+  const root = getRootPath().replace(/\/$/, '');
+
+  // If the link is already localized, do nothing
+  if (link.startsWith(root)) return link;
+  return `${root}${link}`;
 }
 
 /**

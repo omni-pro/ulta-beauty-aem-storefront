@@ -14,7 +14,7 @@
 
 /* stylelint-disable no-empty-source */
 :root, .dropin-design {
-    /* Ultra colors */
+    /* Ulta colors */
 
     /* Primary sunset */
     --color-primary-sunset-50: #fff5eb;
@@ -49,33 +49,39 @@
     --color-gray-900: #232323;
     --color-black: #000;
 
+    /* Semantics */
+    --color-error: #b30000;
+    --color-validation: #207e15;
+    --color-notification: #0e3ac9;
+    --color-warning: #fc0;
+
     /* Adobe Commerce Dropin design tokens */
     --color-brand-300: #6d6d6d;
-    --color-brand-500: #454545;
-    --color-brand-600: #383838;
-    --color-brand-700: #2b2b2b;
-    --color-neutral-50: #fff;
-    --color-neutral-100: #fafafa;
-    --color-neutral-200: #f5f5f5;
-    --color-neutral-300: #e8e8e8;
-    --color-neutral-400: #d6d6d6;
-    --color-neutral-500: #b8b8b8;
-    --color-neutral-600: #8f8f8f;
-    --color-neutral-700: #666;
-    --color-neutral-800: #3d3d3d;
-    --color-neutral-900: #292929;
-    --color-positive-200: #eff5ef;
-    --color-positive-500: #7fb078;
-    --color-positive-800: #53824c;
-    --color-informational-200: #eeeffb;
-    --color-informational-500: #6978d9;
-    --color-informational-800: #5d6dd6;
-    --color-warning-200: #fdf3e9;
-    --color-warning-500: #e79f5c;
-    --color-warning-800: #cc7a2e;
-    --color-alert-200: #ffebeb;
-    --color-alert-500: #db7070;
-    --color-alert-800: #c35050;
+    --color-brand-500: var(--color-black);
+    --color-brand-600: var(--color-gray-900);
+    --color-brand-700: var(--color-gray-900);
+    --color-neutral-50: var(--color-white);
+    --color-neutral-100: var(--color-gray-25);
+    --color-neutral-200: var(--color-gray-200);
+    --color-neutral-300: var(--color-gray-400);
+    --color-neutral-400: var(--color-gray-300);
+    --color-neutral-500: var(--color-white);
+    --color-neutral-600: var(--color-gray-300);
+    --color-neutral-700: var(--color-black);
+    --color-neutral-800: var(--color-black);
+    --color-neutral-900: var(--color-black);
+    --color-positive-200: var(--color-black);
+    --color-positive-500: #ebfff1;
+    --color-positive-800: var(--color-black);
+    --color-informational-200: var(--color-black);
+    --color-informational-500: #ebefff;
+    --color-informational-800: var(--color-black);
+    --color-warning-200: var(--color-black);
+    --color-warning-500: #fffde5;
+    --color-warning-800: var(--color-black);
+    --color-alert-200: var(--color-black);
+    --color-alert-500: #ffe5e5;
+    --color-alert-800: var(--color-black);
     --color-button-active: var(--color-brand-700);
     --color-button-focus: var(--color-neutral-400);
     --color-button-hover: var(--color-brand-600);

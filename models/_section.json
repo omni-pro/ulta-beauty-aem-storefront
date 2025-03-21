@@ -43,6 +43,14 @@
     {
       "id": "section",
       "components": [
+        "accordion",
+        "carousel",
+        "form",
+        "quote",
+        "search",
+        "table",
+        "tabs",
+        "video",
         "text",
         "image",
         "button",

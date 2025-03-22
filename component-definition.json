@@ -1168,21 +1168,6 @@
           }
         },
         {
-          "title": "ulta-daily-offer",
-          "id": "ulta-daily-offer",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "ulta-daily-offer",
-                  "model": "ulta-daily-offer"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "ulta-corporate-commitments",
           "id": "ulta-corporate-commitments",
           "plugins": {
